@@ -1,0 +1,12 @@
+
+
+author: "Ian Moore"
+date: today
+format:
+  pdf:
+    echo: false
+    fig-width: 24
+    fig-height: 18
+    geometry: margin=0.5in
+    pdf-engine: xelatex
+    keep-tex: false
