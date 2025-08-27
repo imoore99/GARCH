@@ -43,13 +43,17 @@ Development Tools:
 - Git - Version control and collaboration
 
 LIVE PROJECT:
-View Full Analysis & Visualizations → https://ian-moore-analytics.webflow.io/project/garch
-Explore the complete project with interactive charts, detailed methodology, and comprehensive risk analysis on my portfolio site.
+- View Full Analysis & Visualizations → https://ian-moore-analytics.webflow.io/project/garch
+- Explore the complete project with interactive charts, detailed methodology, and comprehensive risk analysis on my portfolio site.
 
 CONTACT:
+
 Ian Moore - Business Intelligence, Credit Risk and Financial Analytics Leader
+
 📧 EMAIL: ian.moore@hey.com
+
 💼 LinkedIn: https://www.linkedin.com/in/ian-moore-analytics/
+
 🌐 Portfolio: https://www.ianmooreanalytics.com
 
 This project demonstrates advanced quantitative risk analysis techniques for institutional portfolio management and strategic investment decision-making.
