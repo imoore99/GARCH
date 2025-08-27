@@ -1,6 +1,6 @@
-GARCH Model for S&P 500 Volatility Forecasting
+## GARCH Model for S&P 500 Volatility Forecasting
 
-Advanced Risk Analytics & Volatility Modeling
+## Advanced Risk Analytics & Volatility Modeling
 
 PROJECT OVERVIEW:
 Purpose: To measure the risk profile of the S&P 500 and determine volatility metrics for adequate risk management using advanced GARCH modeling techniques.
