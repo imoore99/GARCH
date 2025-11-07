@@ -18,7 +18,7 @@ st.title("GARCH Volatility Forecasting Dashboard")
 st.subheader("Automated SPY Risk Analytics")
 
 # --- LOAD DATA FROM S3 BUCKET ---
-'''
+
 # Load data function
 @st.cache_data
 def load_data_from_s3():
@@ -37,9 +37,9 @@ def load_data_from_s3():
 
 # Load data
 garch_data = load_data_from_s3()
-'''
-garch_data = pd.read_csv('garch_data.csv', parse_dates=['End_Date'], index_col='End_Date')[['volatility_forecast',
-       'annualized_volatility']] #testing with csv file locally
+
+#garch_data = pd.read_csv('garch_data.csv', parse_dates=['End_Date'], index_col='End_Date')[['volatility_forecast',
+#       'annualized_volatility']] #testing with csv file locally
 garch_data['realized_volatility'] = garch_data['volatility_forecast'].shift(-1)
 
 # --- DATA PROCESSING AND METRICS CALCULATION ---
