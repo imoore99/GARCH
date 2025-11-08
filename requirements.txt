@@ -3,5 +3,6 @@ pandas
 numpy
 matplotlib
 boto3
+datetime
 seaborn
 scipy

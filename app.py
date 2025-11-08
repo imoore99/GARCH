@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import boto3
+import datetime
 from scipy import stats
 from io import StringIO
 
@@ -188,3 +189,10 @@ with col1:
     st.pyplot(create_forecast_distribution_plot(garch_data, current_ann_volatility))
 with col2:
     st.pyplot(create_forecast_validation_plot(garch_data))
+
+last_forecast_date = garch_data['End_Date'].iloc[-1]
+total_forecasts = len(garch_data)
+current_timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+
+st.divider()
+st.info(f"📈 **System Status**: {total_forecasts} forecasts generated | Latest: {last_forecast_date} | Dashboard refreshed: {current_timestamp}")
