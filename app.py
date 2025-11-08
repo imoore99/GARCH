@@ -130,7 +130,7 @@ def create_forecast_validation_plot(garch_data, current_ann_volatility):
     # Clean up x-axis dates
     ax.xaxis.set_major_locator(mdates.MonthLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %Y'))
-    plt.xticks(rotation=45)
+    #plt.xticks(rotation=45)
 
     ax.legend(fontsize=14)
     plt.title('GARCH Annualized Volatility Forecast', fontsize=16, fontweight='bold')
