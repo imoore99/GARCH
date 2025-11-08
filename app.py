@@ -117,8 +117,8 @@ def create_forecast_validation_plot(garch_data, current_ann_volatility):
     # current annualized volatility plot
     fig, ax = plt.subplots(figsize=(16, 8))
     plt.style.use('seaborn-v0_8')
-    ax.plot(garch_data.index, garch_data['annualized_volatility'], color = '#1f77b4',label='Annualized Volatility Forecast: Actual')
-    ax.plot(garch_data.index, garch_data['annualized_volatility'].rolling(window=30).mean(), linewidth=1, linestyle=':', color='#62b4f3', label='Annualized Volatility Forecast: 30 Day Rolling Avg')
+    ax.plot(garch_data['End_Date'], garch_data['annualized_volatility'], color = '#1f77b4',label='Annualized Volatility Forecast: Actual')
+    ax.plot(garch_data['End_Date'], garch_data['annualized_volatility'].rolling(window=30).mean(), linewidth=1, linestyle=':', color='#62b4f3', label='Annualized Volatility Forecast: 30 Day Rolling Avg')
     ax.axhline(y=current_ann_volatility, color='#d62728', linestyle='--', label='Current Annualized Volatility: {}%'.format(current_ann_volatility))
     ax.axhline(y=garch_data['annualized_volatility'].mean(), color='g', linestyle='--', label='Average Annualized Volatility: {}%'.format(round(garch_data['annualized_volatility'].mean(),2)))
     ax.legend(fontsize=14)
