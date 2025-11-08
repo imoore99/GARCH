@@ -98,15 +98,15 @@ vol_180d_avg, vol_180d_avg_presentation = transform_volatility_avg(180)
 
 metric_cols = st.columns(5)
 with metric_cols[0]:
-    st.metric("Current", vol_current, vol_current_change)
+    st.metric("Current", vol_current, vol_current_change, delta_color="inverse")
 with metric_cols[1]:
-    st.metric("30-day Avg", vol_30d_avg, vol_30d_avg_presentation)
+    st.metric("30-day Avg", vol_30d_avg, vol_30d_avg_presentation, delta_color="inverse")
 with metric_cols[2]:
-    st.metric("60-day Avg", vol_60d_avg, vol_60d_avg_presentation)
+    st.metric("60-day Avg", vol_60d_avg, vol_60d_avg_presentation, delta_color="inverse")
 with metric_cols[3]:
-    st.metric("90-day Avg", vol_90d_avg, vol_90d_avg_presentation)
+    st.metric("90-day Avg", vol_90d_avg, vol_90d_avg_presentation, delta_color="inverse")
 with metric_cols[4]:
-    st.metric("180-day Avg", vol_180d_avg, vol_180d_avg_presentation)
+    st.metric("180-day Avg", vol_180d_avg, vol_180d_avg_presentation, delta_color="inverse")
 
 ## --> FORECAST VALIDATION PLOT
 current_ann_volatility = round(garch_data['annualized_volatility'].iloc[-1], 2) #identify current volitality for plot title
