@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import boto3
 import datetime
+import pytz
 from scipy import stats
 from io import StringIO
 
@@ -190,9 +191,13 @@ with col1:
 with col2:
     st.pyplot(create_forecast_validation_plot(garch_data))
 
+st.divider()
+
 last_forecast_date = garch_data['End_Date'].iloc[-1]
 total_forecasts = len(garch_data)
-current_timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+# Get current time in PST/PDT (automatically handles daylight saving)
+pst_tz = pytz.timezone('America/Los_Angeles')
+current_pst = datetime.datetime.now(pst_tz)
+formatted_pst = current_pst.strftime("%Y-%m-%d %H:%M PST")
 
-st.divider()
-st.info(f"📈 **System Status**: {total_forecasts} forecasts generated | Latest: {last_forecast_date} | Dashboard refreshed: {current_timestamp}")
+st.info(f"📈 **System Status**: {total_forecasts} forecasts generated | Latest: {last_forecast_date} | Dashboard refreshed: {formatted_pst}")
