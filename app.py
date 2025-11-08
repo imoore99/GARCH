@@ -20,7 +20,7 @@ st.subheader("Automated SPY Risk Analytics")
 # --- LOAD DATA FROM S3 BUCKET ---
 
 # Load data function
-@st.cache_data
+@st.cache_data(ttl=1800)  # Cache expires every 30 minutes
 def load_data_from_s3():
     s3 = boto3.client(
         's3',
