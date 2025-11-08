@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 import boto3
 import datetime
 import pytz
@@ -117,10 +118,20 @@ def create_forecast_validation_plot(garch_data, current_ann_volatility):
     # current annualized volatility plot
     fig, ax = plt.subplots(figsize=(16, 8))
     plt.style.use('seaborn-v0_8')
+
+    # Convert End_Date to datetime if needed
+    garch_data['End_Date'] = pd.to_datetime(garch_data['End_Date'])
+
     ax.plot(garch_data['End_Date'], garch_data['annualized_volatility'], color = '#1f77b4',label='Annualized Volatility Forecast: Actual')
     ax.plot(garch_data['End_Date'], garch_data['annualized_volatility'].rolling(window=30).mean(), linewidth=1, linestyle=':', color='#62b4f3', label='Annualized Volatility Forecast: 30 Day Rolling Avg')
     ax.axhline(y=current_ann_volatility, color='#d62728', linestyle='--', label='Current Annualized Volatility: {}%'.format(current_ann_volatility))
     ax.axhline(y=garch_data['annualized_volatility'].mean(), color='g', linestyle='--', label='Average Annualized Volatility: {}%'.format(round(garch_data['annualized_volatility'].mean(),2)))
+
+    # Clean up x-axis dates
+    ax.xaxis.set_major_locator(mdates.MonthLocator())
+    ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %Y'))
+    plt.xticks(rotation=45)
+
     ax.legend(fontsize=14)
     plt.title('GARCH Annualized Volatility Forecast', fontsize=16, fontweight='bold')
     plt.ylabel('Volatility (%)', fontsize=12)
