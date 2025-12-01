@@ -150,7 +150,7 @@ st.pyplot(create_forecast_validation_plot(garch_data, current_ann_volatility))
 def create_forecast_distribution_plot(garch_data, current_ann_volatility):
     fig, ax = plt.subplots(figsize=(6, 6))
     plt.style.use('seaborn-v0_8')
-    ax.boxplot(garch_data['annualized_volatility'], vert=True, patch_artist=True, boxprops=dict(facecolor='#1f77b4', color='#1f77b4'), medianprops=dict(color='green', linestyle='--', linewidth=2 ))
+    ax.boxplot(garch_data['annualized_volatility'], vert=True, patch_artist=True, boxprops=dict(facecolor='#1f77b4', color='#1f77b4'), medianprops=dict(color='white', linestyle='--', linewidth=2 ))
     ax.scatter(1, current_ann_volatility, color='red', s=40, zorder=5, label='Current Annualized Volatility: {}%'.format(current_ann_volatility))
     ax.set_title('GARCH Annualized Volatility Forecast Distribution', fontsize=16, fontweight='bold')
     ax.set_ylabel('Volatility (%)', fontsize=12)
