@@ -7,3 +7,5 @@ datetime
 seaborn
 scipy
 pytz
+arch
+yfinance
